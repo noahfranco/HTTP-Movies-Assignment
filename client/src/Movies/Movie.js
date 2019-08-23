@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import handleSubmit  from "../components/Form.js";
+
 export default class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -36,13 +38,21 @@ export default class Movie extends React.Component {
       return <div>Loading movie information...</div>;
     }
 
+    // I'm adding this
+    // const updateMovie = movieNew => {
+    //   setMovie([...movie, movieNew])
+    // }
+    // I'm adding this
     return (
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
+        <button  onClick={handleSubmit}> Update Movie </button>
+        <div> 
       </div>
+      </div> 
     );
   }
 }
